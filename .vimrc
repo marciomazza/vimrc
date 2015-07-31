@@ -169,12 +169,12 @@ set ruler
 set number
 
 let no_buffers_menu=1
+set t_Co=256
 if !exists('g:not_finsh_neobundle')
   colorscheme molokai
 endif
 
 set mousemodel=popup
-set t_Co=256
 set nocursorline
 set guioptions=egmrti
 set gfn=Monospace\ 10
