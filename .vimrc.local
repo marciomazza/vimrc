@@ -8,20 +8,20 @@ let g:jedi#use_tabs_not_buffers = 1
 
 
 "" HARD !!!!!!!!!!!!!!!!!!!!!!!
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-inoremap  <C-Up>     <NOP>
-inoremap  <C-Down>   <NOP>
-inoremap  <C-Left>   <NOP>
-inoremap  <C-Right>  <NOP>
-
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
-noremap   <C-Up>     <NOP>
-noremap   <C-Down>   <NOP>
-noremap   <C-Left>   <NOP>
-noremap   <C-Right>  <NOP>
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"inoremap  <C-Up>     <NOP>
+"inoremap  <C-Down>   <NOP>
+"inoremap  <C-Left>   <NOP>
+"inoremap  <C-Right>  <NOP>
+"
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
+"noremap   <C-Up>     <NOP>
+"noremap   <C-Down>   <NOP>
+"noremap   <C-Left>   <NOP>
+"noremap   <C-Right>  <NOP>
