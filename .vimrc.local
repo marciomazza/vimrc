@@ -18,3 +18,27 @@ let NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowHidden = 1
 let g:strip_whitespace_on_save = 1
 
+" IN AIRLINE avoid delay when switching from insert to normal mode
+" see https://github.com/bling/vim-airline/issues/124#issuecomment-22389800
+" and see https://github.com/bling/vim-airline/wiki/FAQ#there-is-a-pause-when-leaving-insert-mode
+set ttimeoutlen=50
+
+""" TODO get back to this plugin and check if it can be useful
+" PYTEST
+"" Execute the tests
+nmap <silent><Leader>tc <Esc>:Pytest class<CR>
+nmap <silent><Leader>tm <Esc>:Pytest method<CR>
+nmap <silent><Leader>tf <Esc>:Pytest file<CR>
+nmap <silent><Leader>tt <Esc>:Pytest project<CR>
+"" cycle through test errors
+nmap <silent><Leader>tn <Esc>:Pytest next<CR>
+nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
+nmap <silent><Leader>te <Esc>:Pytest error<CR>
+
+" au FileType python setlocal formatprg=autopep8\ -
+let g:autopep8_disable_show_diff = 1
+
+:nnoremap <leader>y :Yapf<cr>
+:set autoread
+" let g:vim_isort_map = '<leader>k'
+:nnoremap <leader>k :Isort<cr>
