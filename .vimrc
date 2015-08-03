@@ -51,10 +51,6 @@ if v:version > 702
 	NeoBundle 'Shougo/vimshell.vim'
 endif
 
-"" Vim-Session
-NeoBundle 'xolox/vim-misc'
-NeoBundle 'xolox/vim-session'
-
 "" Snippets
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
@@ -62,15 +58,19 @@ NeoBundle 'honza/vim-snippets'
 "" Color
 NeoBundle 'tomasr/molokai'
 
-let g:vim_bootstrap_langs = "javascript,python,html"
-let g:vim_bootstrap_editor = "vim"				" nvim or vim
-
-"" Custom bundles
-
 "" for Python
 NeoBundle "davidhalter/jedi-vim"
 NeoBundle "majutsushi/tagbar"
 NeoBundle "Yggdroot/indentLine"
+NeoBundle 'ervandew/supertab'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'alfredodeza/pytest.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
+" replace with 'mindriot101/vim-yapf' once this pull request is accepted
+" https://github.com/mindriot101/vim-yapf/pull/7
+NeoBundle 'interlegis/vim-yapf'
+NeoBundle 'fisadev/vim-isort'
 
 "" for Python and Javascript
 NeoBundle "scrooloose/syntastic"
@@ -81,13 +81,6 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'gorodinskiy/vim-coloresque'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'mattn/emmet-vim'
-
-
-
-"" Include user's extra bundle
-if filereadable(expand("~/.vimrc.local.bundles"))
-  source ~/.vimrc.local.bundles
-endif
 
 call neobundle#end()
 
@@ -211,11 +204,10 @@ let g:airline_theme = 'powerlineish'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-
+let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
-
 if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -232,10 +224,15 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+" in airline avoid delay when switching from insert to normal mode
+" see https://github.com/bling/vim-airline/issues/124#issuecomment-22389800
+" and see https://github.com/bling/vim-airline/wiki/FAQ#there-is-a-pause-when-leaving-insert-mode
+set ttimeoutlen=50
+
 "*****************************************************************************
 "" Abbreviations
 "*****************************************************************************
-"" no one is really happy until you have this shortcuts
+"" no one is really happy until you have these shortcuts
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -255,6 +252,8 @@ let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeWinSize = 20
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeQuitOnOpen = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 noremap <F3> :NERDTreeToggle<CR>
@@ -268,11 +267,7 @@ let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
 
 " terminal emulation
-if g:vim_bootstrap_editor == 'nvim'
-  nnoremap <silent> <leader>sh :terminal<CR>
-else
-  nnoremap <silent> <leader>sh :VimShellCreate<CR>
-endif
+nnoremap <silent> <leader>sh :VimShellCreate<CR>
 
 "*****************************************************************************
 "" Functions
@@ -338,21 +333,7 @@ nnoremap <leader>ss :SaveSession
 nnoremap <leader>sd :DeleteSession<CR>
 nnoremap <leader>sc :CloseSession<CR>
 
-"" Tabs
-" nnoremap <Tab> gt
-" nnoremap <S-Tab> gT
-nnoremap <silent> <S-t> :tabnew<CR>
-
-"" Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
-
-"" Opens an edit command with the path of the currently edited file filled in
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-"" Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-"" ctrlp.vim
+" ctrlp.vim
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tox)$'
@@ -378,7 +359,6 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 
-
 "" Copy/Paste/Cut
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
@@ -395,20 +375,18 @@ if has('macunix')
 endif
 
 "" Buffer nav
+noremap <S-Tab>   :bp<CR>
 noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
+
+noremap <Tab>     :bn<CR>
 noremap <leader>x :bn<CR>
 noremap <leader>w :bn<CR>
-
-"" Tabs
-noremap <Tab>   :bp<CR>
-noremap <S-Tab> :bn<CR>
-
 
 "" Close buffer
 noremap <leader>c :bd<CR>
 
-"" Clean search (highlight)
+"" Clear search highlight
 nnoremap <silent> <leader><space> :noh<cr>
 
 "" Vmap for maintain Visual Mode after shifting > and <
@@ -437,6 +415,7 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
+let g:jedi#popup_on_dot = 1
 
 " syntastic
 let g:syntastic_python_checkers=['python', 'flake8']

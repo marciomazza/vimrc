@@ -1,9 +1,0 @@
-NeoBundle 'ervandew/supertab'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'alfredodeza/pytest.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
-" replace with 'mindriot101/vim-yapf' once this pull request is accepted
-" https://github.com/mindriot101/vim-yapf/pull/7
-NeoBundle 'interlegis/vim-yapf'
-NeoBundle 'fisadev/vim-isort'

@@ -2,24 +2,12 @@
 "    (set term=gnome-256color breaks it)
 set term=xterm-256color
 
-" jedi-vim
-let g:jedi#popup_on_dot = 1
-
 """ nao sei se isso estah ok. verificar!
 " let g:jedi#show_call_signatures = "2"
 
 let g:SuperTabDefaultCompletionType = "context"
 
-let g:airline_powerline_fonts = 1
-
-let NERDTreeQuitOnOpen = 1
-let g:NERDTreeShowHidden = 1
 let g:strip_whitespace_on_save = 1
-
-" IN AIRLINE avoid delay when switching from insert to normal mode
-" see https://github.com/bling/vim-airline/issues/124#issuecomment-22389800
-" and see https://github.com/bling/vim-airline/wiki/FAQ#there-is-a-pause-when-leaving-insert-mode
-set ttimeoutlen=50
 
 """ TODO get back to this plugin and check if it can be useful
 " PYTEST
