@@ -62,26 +62,20 @@ NeoBundle 'honza/vim-snippets'
 "" Color
 NeoBundle 'tomasr/molokai'
 
-"" Vim-Bootstrap Updater
-"NeoBundle 'sherzberg/vim-bootstrap-updater'
-
 let g:vim_bootstrap_langs = "javascript,python,html"
 let g:vim_bootstrap_editor = "vim"				" nvim or vim
 
 "" Custom bundles
 
-"" Python Bundle
+"" for Python
 NeoBundle "davidhalter/jedi-vim"
-NeoBundle "scrooloose/syntastic"
 NeoBundle "majutsushi/tagbar"
 NeoBundle "Yggdroot/indentLine"
 
-
-"" Javascript Bundle
+"" for Python and Javascript
 NeoBundle "scrooloose/syntastic"
 
-
-"" HTML Bundle
+"" HTML
 NeoBundle 'amirh/HTML-AutoCloseTag'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'gorodinskiy/vim-coloresque'
