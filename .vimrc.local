@@ -6,6 +6,17 @@ set term=xterm-256color
 let g:jedi#popup_on_dot = 1
 let g:jedi#use_tabs_not_buffers = 1
 
+""" nao sei se isso estah ok. verificar!
+let g:jedi#show_call_signatures = "2"
+"let g:jedi#completions_command = "<Tab>"
+
+let g:SuperTabDefaultCompletionType = "context"
+
+let g:airline_powerline_fonts = 1
+
+let NERDTreeQuitOnOpen = 1
+let g:NERDTreeShowHidden = 1
+let g:strip_whitespace_on_save = 1
 
 "" HARD !!!!!!!!!!!!!!!!!!!!!!!
 "inoremap  <Up>     <NOP>
