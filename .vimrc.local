@@ -4,11 +4,9 @@ set term=xterm-256color
 
 " jedi-vim
 let g:jedi#popup_on_dot = 1
-let g:jedi#use_tabs_not_buffers = 1
 
 """ nao sei se isso estah ok. verificar!
-let g:jedi#show_call_signatures = "2"
-"let g:jedi#completions_command = "<Tab>"
+" let g:jedi#show_call_signatures = "2"
 
 let g:SuperTabDefaultCompletionType = "context"
 
@@ -40,5 +38,6 @@ let g:autopep8_disable_show_diff = 1
 
 :nnoremap <leader>y :Yapf<cr>
 :set autoread
-" let g:vim_isort_map = '<leader>k'
 :nnoremap <leader>k :Isort<cr>
+
+nmap <silent><Leader>te <Esc>:Pytest error<CR>
