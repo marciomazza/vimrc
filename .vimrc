@@ -72,6 +72,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'mindriot101/vim-yapf'
 NeoBundle 'fisadev/vim-isort'
 NeoBundle 'hdima/python-syntax'
+NeoBundle 'luochen1990/rainbow'
 
 "" for Python and Javascript
 NeoBundle "scrooloose/syntastic"
@@ -456,4 +457,7 @@ nmap <silent><Leader>tt <Esc>:Pytest project<CR>
 nmap <silent><Leader>tn <Esc>:Pytest next<CR>
 nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
 nmap <silent><Leader>te <Esc>:Pytest error<CR>
+
+" rainbow
+let g:rainbow_active = 1
 
