@@ -56,7 +56,7 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 
 "" Color
-NeoBundle 'tomasr/molokai'
+NeoBundle 'marciomazza/vim-brogrammer-theme'
 
 "" for Python
 NeoBundle "davidhalter/jedi-vim"
@@ -67,10 +67,9 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'alfredodeza/pytest.vim'
 NeoBundle 'terryma/vim-multiple-cursors'
-" replace with 'mindriot101/vim-yapf' once this pull request is accepted
-" https://github.com/mindriot101/vim-yapf/pull/7
-NeoBundle 'interlegis/vim-yapf'
+NeoBundle 'mindriot101/vim-yapf'
 NeoBundle 'fisadev/vim-isort'
+NeoBundle 'hdima/python-syntax'
 
 "" for Python and Javascript
 NeoBundle "scrooloose/syntastic"
@@ -133,6 +132,9 @@ set fileformats=unix,dos,mac
 set showcmd
 set shell=/bin/sh
 
+" Reload files from disk automatically
+set autoread
+
 " session management
 let g:session_directory = "~/.vim/session"
 let g:session_autoload = "no"
@@ -149,7 +151,7 @@ set number
 let no_buffers_menu=1
 set t_Co=256
 if !exists('g:not_finsh_neobundle')
-  colorscheme molokai
+  colorscheme brogrammer
 endif
 
 set mousemodel=popup
@@ -164,14 +166,8 @@ if has("gui_running")
   endif
 else
   let g:CSApprox_loaded = 1
-
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
+  " Note that setting term=gnome-256color yields broken Ctrl-<Left> and Ctrl-<Right>
+  set term=xterm-256color
 endif
 
 if &term =~ '256color'
@@ -309,6 +305,7 @@ augroup vimrc-make-cmake
 augroup END
 
 set autoread
+au FocusGained,BufEnter,BufWinEnter,CursorHold,CursorMoved * :checktime
 
 "*****************************************************************************
 "" Mappings
@@ -432,11 +429,29 @@ let g:tagbar_autofocus = 1
 
 let g:javascript_enable_domhtmlcss = 1
 
+" hdima/python-syntax
+" Full python Syntax highlighting
+let g:python_highlight_all = 1
 
+" supertab
+let g:SuperTabDefaultCompletionType = "context"
 
+" ntpeters/vim-better-whitespace
+let g:strip_whitespace_on_save = 1
 
+" vim-yapf
+:nnoremap <leader>y :Yapf<cr>
+:nnoremap <leader>k :Isort<cr>
 
-"" Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
+" pytest.vim
+"  TODO get back to this plugin and check if it can be useful
+" Execute the tests
+nmap <silent><Leader>tc <Esc>:Pytest class<CR>
+nmap <silent><Leader>tm <Esc>:Pytest method<CR>
+nmap <silent><Leader>tf <Esc>:Pytest file<CR>
+nmap <silent><Leader>tt <Esc>:Pytest project<CR>
+" cycle through test errors
+nmap <silent><Leader>tn <Esc>:Pytest next<CR>
+nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
+nmap <silent><Leader>te <Esc>:Pytest error<CR>
+
