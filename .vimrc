@@ -467,3 +467,8 @@ let g:rainbow_active = 1
 
 " vim-autopep8
 let g:autopep8_disable_show_diff = 1
+
+" riv.vim
+let g:riv_disable_folding = 1
+let g:riv_auto_rst2html = 1
+let g:riv_temp_path = '/tmp'
