@@ -75,6 +75,9 @@ NeoBundle 'fisadev/vim-isort'
 NeoBundle 'hdima/python-syntax'
 NeoBundle 'luochen1990/rainbow'
 
+" temp fork, wait for PR to be merged
+NeoBundle 'marciomazza/vim-autopep8'
+
 "" for Python and Javascript
 NeoBundle "scrooloose/syntastic"
 
@@ -462,3 +465,5 @@ nmap <silent><Leader>te <Esc>:Pytest error<CR>
 " rainbow
 let g:rainbow_active = 1
 
+" vim-autopep8
+let g:autopep8_disable_show_diff = 1
