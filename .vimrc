@@ -433,7 +433,7 @@ let g:airline#extensions#tagbar#enabled = 1
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
 
 
 let g:javascript_enable_domhtmlcss = 1
