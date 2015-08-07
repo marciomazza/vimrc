@@ -53,7 +53,9 @@ NeoBundle 'vim-scripts/grep.vim'
 NeoBundle 'vim-scripts/CSApprox'
 NeoBundle 'ntpeters/vim-better-whitespace'
 NeoBundle 'bogado/file-line'
-NeoBundle 'Rykka/riv.vim'
+" temp fork, wait for PR to be merged
+" NeoBundle 'Rykka/riv.vim'
+NeoBundle 'marciomazza/riv.vim'
 
 "" Snippets
 NeoBundle 'SirVer/ultisnips'
