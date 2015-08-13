@@ -67,7 +67,6 @@ NeoBundle 'marciomazza/vim-brogrammer-theme'
 "" for Python
 NeoBundle "davidhalter/jedi-vim"
 NeoBundle "majutsushi/tagbar"
-NeoBundle "Yggdroot/indentLine"
 NeoBundle 'ervandew/supertab'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -480,3 +479,4 @@ let g:autopep8_disable_show_diff = 1
 let g:riv_disable_folding = 1
 let g:riv_auto_rst2html = 1
 let g:riv_temp_path = '/tmp'
+
