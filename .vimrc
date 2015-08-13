@@ -403,7 +403,13 @@ vmap > >gv
 "" Open current line on GitHub
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
 
-"" Custom configs
+"" toggle spell check
+map <F6> :setlocal spell! spelllang=en_us<CR>
+imap <F6> <C-o>:setlocal spell! spelllang=en_us<CR>
+
+"*****************************************************************************
+"" Custom add-on configs
+"*****************************************************************************
 
 " vim-python
 augroup vimrc-python
