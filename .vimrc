@@ -316,6 +316,13 @@ augroup END
 set autoread
 au FocusGained,BufEnter,BufWinEnter,CursorHold,CursorMoved * :checktime
 
+"" xml extras
+autocmd BufRead,BufNewFile *.zcml :set ft=xml
+
+"" html
+autocmd FileType html :setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType xml :setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
@@ -364,6 +371,8 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+" TEMP resolver
+let g:syntastic_xml_checkers=['']
 
 "" Copy/Paste/Cut
 if has('unnamedplus')
