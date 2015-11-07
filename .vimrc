@@ -374,6 +374,9 @@ let g:syntastic_aggregate_errors = 1
 " TEMP resolver
 let g:syntastic_xml_checkers=['']
 
+" TEMP
+let g:syntastic_xml_checkers=['']
+
 "" Copy/Paste/Cut
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
