@@ -76,9 +76,7 @@ NeoBundle 'mindriot101/vim-yapf'
 NeoBundle 'fisadev/vim-isort'
 NeoBundle 'hdima/python-syntax'
 NeoBundle 'luochen1990/rainbow'
-
-" temp fork, wait for PR to be merged
-NeoBundle 'marciomazza/vim-autopep8'
+NeoBundle 'tell-k/vim-autopep8'
 
 "" for Python and Javascript
 NeoBundle "scrooloose/syntastic"
