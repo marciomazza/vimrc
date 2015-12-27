@@ -316,10 +316,10 @@ au FocusGained,BufEnter,BufWinEnter,CursorHold,CursorMoved * :checktime
 
 "" xml extras
 autocmd BufRead,BufNewFile *.zcml :set ft=xml
-autocmd FileType xml :setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType xml :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 "" html
-autocmd FileType html :setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 "*****************************************************************************
 "" Mappings
