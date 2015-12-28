@@ -369,11 +369,13 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
+
+" syntastic: ignore some errors
+let g:syntastic_less_lessc_quiet_messages = {"regex": 'variable .* is undefined'}
+
 " TEMP resolver
 let g:syntastic_xml_checkers=['']
 
-" TEMP
-let g:syntastic_xml_checkers=['']
 
 "" Copy/Paste/Cut
 if has('unnamedplus')
