@@ -321,6 +321,12 @@ autocmd FileType xml :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "" html
 autocmd FileType html :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
+"" css
+autocmd FileType css :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
+"" less
+autocmd FileType less :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
