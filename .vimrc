@@ -333,6 +333,9 @@ autocmd FileType css :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "" less
 autocmd FileType less :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
+"" scss
+autocmd FileType scss :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
