@@ -336,6 +336,10 @@ autocmd FileType less :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "" scss
 autocmd FileType scss :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
+"" auto run commands on save
+autocmd BufWritePre *.py :Isort
+autocmd BufWritePre *.py :Autopep8
+
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
@@ -508,4 +512,3 @@ let g:autopep8_disable_show_diff = 1
 let g:riv_disable_folding = 1
 let g:riv_auto_rst2html = 1
 let g:riv_temp_path = '/tmp'
-
