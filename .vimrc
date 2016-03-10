@@ -114,6 +114,9 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
+""" show tabs
+set list
+set listchars=tab:>-
 
 "" Map leader to ,
 let mapleader=','
