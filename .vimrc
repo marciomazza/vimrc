@@ -387,6 +387,8 @@ let g:syntastic_less_lessc_quiet_messages = {"regex": 'variable .* is undefined'
 
 " TEMP resolver
 let g:syntastic_xml_checkers=['']
+let g:syntastic_scss_checkers=['']
+let g:syntastic_sass_checkers=['']
 
 
 "" Copy/Paste/Cut
