@@ -43,6 +43,7 @@ if v:version > 702
 	NeoBundle 'Shougo/vimshell.vim'
 endif
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'ctrlpvim/ctrlp.vim'
