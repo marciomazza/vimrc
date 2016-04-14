@@ -338,8 +338,8 @@ autocmd FileType less :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType scss :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 "" auto run commands on save
-autocmd BufWritePre *.py :Isort
-autocmd BufWritePre *.py :Autopep8
+autocmd BufWritePre *.py :silent Isort
+autocmd BufWritePre *.py :silent Autopep8
 
 "*****************************************************************************
 "" Mappings
