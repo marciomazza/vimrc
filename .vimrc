@@ -3,7 +3,7 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -27,31 +27,59 @@ Plug 'honza/vim-snippets'
 Plug 'marciomazza/vim-brogrammer-theme'
 
 "" for Python
-Plug 'davidhalter/jedi-vim'
-Plug 'majutsushi/tagbar'
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
-Plug 'alfredodeza/pytest.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'mindriot101/vim-yapf'
-Plug 'fisadev/vim-isort'
-Plug 'hdima/python-syntax'
-Plug 'luochen1990/rainbow'
-Plug 'tell-k/vim-autopep8'
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'alfredodeza/pytest.vim', { 'for': 'python' }
+Plug 'mindriot101/vim-yapf', { 'for': 'python' }
+Plug 'fisadev/vim-isort', { 'for': 'python' }
+Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'tell-k/vim-autopep8', { 'for': 'python' }
 
 "" for Python and Javascript
 Plug 'scrooloose/syntastic'
 
 "" HTML
-Plug 'amirh/HTML-AutoCloseTag'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'gorodinskiy/vim-coloresque'
-Plug 'tpope/vim-haml'
-Plug 'mattn/emmet-vim'
+Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'jinja', 'htmldjango'] }
+Plug 'hail2u/vim-css3-syntax', { 'for': ['html', 'jinja', 'htmldjango'] }
+Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'jinja', 'htmldjango', 'css', 'less', 'sass', 'scss'] }
+Plug 'tpope/vim-haml', { 'for': ['haml', 'sass', 'scss'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'jinja', 'htmldjango'] }
+
+"" Programming in general
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'jiangmiao/auto-pairs'
+Plug 'luochen1990/rainbow'
+Plug 'ervandew/supertab'
+Plug 'majutsushi/tagbar', {'on': []}
 
 call plug#end()
 
+" Tagbar
+"" hack by @magnunleno to replace
+""     let g:airline#extensions#tagbar#enabled = 1
+function! MyTagbarToggle()
+  let g:airline#extensions#tagbar#enabled = 1
+  call plug#load('tagbar')
+  TagbarToggle
+  let s:ext = {}
+  let s:ext._theme_funcrefs = []
+  function! s:ext.add_statusline_func(name) dict
+    call airline#add_statusline_func(a:name)
+  endfunction
+  function! s:ext.add_statusline_funcref(function) dict
+    call airline#add_statusline_funcref(a:function)
+  endfunction
+  function! s:ext.add_inactive_statusline_func(name) dict
+    call airline#add_inactive_statusline_func(a:name)
+  endfunction
+  function! s:ext.add_theme_func(name) dict
+    call add(self._theme_funcrefs, function(a:name))
+  endfunction
+  call airline#extensions#tagbar#init(s:ext)
+  AirlineRefresh
+endfunction
+nnoremap <silent> <F4> :call MyTagbarToggle()<CR>
+let g:tagbar_autoclose = 1
 
 "*****************************************************************************
 "" Basic Setup
@@ -168,7 +196,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#tabline#left_sep = ' '
@@ -422,12 +450,6 @@ let g:syntastic_python_checkers=['python', 'flake8']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-
-" Tagbar
-nmap <silent> <F4> :TagbarToggle<CR>
-let g:tagbar_autoclose = 1
-
 
 let g:javascript_enable_domhtmlcss = 1
 
