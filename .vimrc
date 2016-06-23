@@ -1,103 +1,57 @@
 " Bootstrapped with http://vim-bootstrap.com/
 " (https://github.com/avelino/vim-bootstrap)
-"*****************************************************************************
-"" NeoBundle core
-"*****************************************************************************
 
-if has('vim_starting')
-  set nocompatible               " Be iMproved
+call plug#begin('~/.vim/plugged')
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
-
-if !filereadable(neobundle_readme)
-  echo "Installing NeoBundle..."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim/
-  let g:not_finsh_neobundle = "yes"
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-"*****************************************************************************
-"" NeoBundle install packages
-"*****************************************************************************
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-if v:version > 702
-	NeoBundle 'Shougo/vimshell.vim'
-endif
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'vim-scripts/grep.vim'
-NeoBundle 'vim-scripts/CSApprox'
-NeoBundle 'ntpeters/vim-better-whitespace'
-NeoBundle 'bogado/file-line'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'bling/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/grep.vim'
+Plug 'vim-scripts/CSApprox'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'bogado/file-line'
 " temp fork, wait for PR to be merged
-" NeoBundle 'Rykka/riv.vim'
-NeoBundle 'marciomazza/riv.vim'
+" Plug 'Rykka/riv.vim'
+Plug 'marciomazza/riv.vim'
 
 "" Snippets
-NeoBundle 'SirVer/ultisnips'
-NeoBundle 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 "" Color
-NeoBundle 'marciomazza/vim-brogrammer-theme'
+Plug 'marciomazza/vim-brogrammer-theme'
 
 "" for Python
-NeoBundle "davidhalter/jedi-vim"
-NeoBundle "majutsushi/tagbar"
-NeoBundle 'ervandew/supertab'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'alfredodeza/pytest.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'mindriot101/vim-yapf'
-NeoBundle 'fisadev/vim-isort'
-NeoBundle 'hdima/python-syntax'
-NeoBundle 'luochen1990/rainbow'
-" NeoBundle 'tell-k/vim-autopep8'
-NeoBundle 'marciomazza/vim-autopep8'
+Plug 'davidhalter/jedi-vim'
+Plug 'majutsushi/tagbar'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alfredodeza/pytest.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'mindriot101/vim-yapf'
+Plug 'fisadev/vim-isort'
+Plug 'hdima/python-syntax'
+Plug 'luochen1990/rainbow'
+Plug 'tell-k/vim-autopep8'
 
 "" for Python and Javascript
-NeoBundle "scrooloose/syntastic"
+Plug 'scrooloose/syntastic'
 
 "" HTML
-NeoBundle 'amirh/HTML-AutoCloseTag'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'gorodinskiy/vim-coloresque'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'mattn/emmet-vim'
+Plug 'amirh/HTML-AutoCloseTag'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'tpope/vim-haml'
+Plug 'mattn/emmet-vim'
 
-call neobundle#end()
+call plug#end()
 
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 "*****************************************************************************
 "" Basic Setup
@@ -259,7 +213,7 @@ let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
 let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize = 40
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeQuitOnOpen = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
