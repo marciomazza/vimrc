@@ -144,9 +144,8 @@ set number
 
 let no_buffers_menu=1
 set t_Co=256
-if !exists('g:not_finsh_neobundle')
-  colorscheme brogrammer
-endif
+" silent for the case when the plugin has not yet been installed
+silent! colorscheme brogrammer
 
 set mousemodel=popup
 set nocursorline
