@@ -311,6 +311,7 @@ autocmd BufRead,BufNewFile *.zcml :set ft=xml
 autocmd FileType xml :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 "" html
+autocmd BufRead,BufNewFile *.zpt :set ft=html
 autocmd FileType html :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType htmldjango :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 autocmd FileType jinja :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
