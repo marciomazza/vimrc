@@ -33,10 +33,9 @@ Plug 'alfredodeza/pytest.vim', { 'for': 'python' }
 Plug 'mindriot101/vim-yapf', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
 Plug 'hdima/python-syntax', { 'for': 'python' }
-Plug 'tell-k/vim-autopep8', { 'for': 'python' }
 
 "" for Python and Javascript
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 
 "" Javascript
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
@@ -196,7 +195,6 @@ endif
 
 " vim-airline
 let g:airline_theme = 'powerlineish'
-let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -325,10 +323,6 @@ autocmd FileType less :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "" scss
 autocmd FileType scss :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
-"" auto run commands on save
-autocmd BufWritePre *.py :silent Isort
-autocmd BufWritePre *.py :silent Autopep8
-
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
@@ -369,23 +363,9 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
-
-" syntastic: ignore some errors
-let g:syntastic_less_lessc_quiet_messages = {"regex": 'variable .* is undefined'}
-
-" TEMP resolver
-let g:syntastic_xml_checkers=['']
-let g:syntastic_scss_checkers=['']
-let g:syntastic_sass_checkers=['']
-
+" ALE
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {'python': ['autopep8', 'isort']}
 
 "" Copy/Paste/Cut
 if has('unnamedplus')
@@ -450,9 +430,6 @@ let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#popup_on_dot = 1
-
-" syntastic
-let g:syntastic_python_checkers=['python', 'flake8']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
