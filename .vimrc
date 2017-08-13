@@ -85,6 +85,8 @@ function! MyTagbarToggle()
 endfunction
 nnoremap <silent> <F4> :call MyTagbarToggle()<CR>
 let g:tagbar_autoclose = 1
+"" sort by position in file
+let g:tagbar_sort = 0
 
 "*****************************************************************************
 "" Basic Setup
