@@ -369,6 +369,9 @@ let g:UltiSnipsEditSplit="vertical"
 " ALE
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {'python': ['autopep8', 'isort']}
+let g:ale_pattern_options = {'ipython_log.py': {'ale_enabled': 0}}
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 "" Copy/Paste/Cut
 if has('unnamedplus')
