@@ -41,6 +41,7 @@ Plug 'w0rp/ale'
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'justinj/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'isruslan/vim-es6', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'posva/vim-vue'
 
 "" HTML
 Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'jinja', 'htmldjango'] }
