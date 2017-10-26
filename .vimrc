@@ -44,7 +44,7 @@ Plug 'isruslan/vim-es6', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'posva/vim-vue'
 
 "" HTML
-Plug 'amirh/HTML-AutoCloseTag', { 'for': ['html', 'jinja', 'htmldjango'] }
+Plug 'vim-scripts/HTML-AutoCloseTag', { 'for': ['html', 'jinja', 'htmldjango'] }
 Plug 'hail2u/vim-css3-syntax', { 'for': ['html', 'jinja', 'htmldjango'] }
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'jinja', 'htmldjango', 'css', 'less', 'sass', 'scss'] }
 Plug 'tpope/vim-haml', { 'for': ['haml', 'sass', 'scss'] }
