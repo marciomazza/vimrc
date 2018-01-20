@@ -19,6 +19,7 @@ Plug 'bogado/file-line'
 " temp fork, wait for PR to be merged
 " Plug 'Rykka/riv.vim'
 Plug 'marciomazza/riv.vim'
+Plug 'terryma/vim-expand-region'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
@@ -411,8 +412,8 @@ vmap > >gv
 noremap ,o :!echo `git url`/blob/`git rev-parse --abbrev-ref HEAD`/%\#L<C-R>=line('.')<CR> \| xargs open<CR><CR>
 
 "" toggle spell check
-map <F6> :setlocal spell! spelllang=en_us<CR>
-imap <F6> <C-o>:setlocal spell! spelllang=en_us<CR>
+map <F6> :syntax on<CR>:setlocal spell! spelllang=en_us<CR>
+imap <F6> <C-o>:syntax on<C-o>:setlocal spell! spelllang=en_us<CR>
 
 "*****************************************************************************
 "" Custom add-on configs
