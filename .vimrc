@@ -16,9 +16,7 @@ Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bogado/file-line'
-" temp fork, wait for PR to be merged
-" Plug 'Rykka/riv.vim'
-Plug 'marciomazza/riv.vim'
+Plug 'gu-fan/riv.vim'
 Plug 'terryma/vim-expand-region'
 
 "" Snippets
