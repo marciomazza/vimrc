@@ -480,6 +480,7 @@ let g:riv_temp_path = '/tmp'
 
 " vim-better-whitespace
 let g:strip_whitespace_confirm = 0
+let g:strip_whitelines_at_eof = 1
 
 " vimdiff
 "" ignore whitespace differences
