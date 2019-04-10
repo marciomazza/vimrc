@@ -478,6 +478,9 @@ let g:riv_disable_folding = 1
 let g:riv_auto_rst2html = 1
 let g:riv_temp_path = '/tmp'
 
+" vim-better-whitespace
+let g:strip_whitespace_confirm = 0
+
 " vimdiff
 "" ignore whitespace differences
 set diffopt+=iwhite
