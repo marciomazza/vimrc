@@ -32,6 +32,7 @@ Plug 'alfredodeza/pytest.vim', { 'for': 'python' }
 Plug 'mindriot101/vim-yapf', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
 Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'ambv/black'
 
 "" for Python and Javascript
 Plug 'w0rp/ale'
@@ -325,6 +326,9 @@ autocmd FileType less :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "" scss
 autocmd FileType scss :setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
+"" python black
+autocmd BufWritePre *.py execute ':Black'
+
 "*****************************************************************************
 "" Mappings
 "*****************************************************************************
@@ -367,7 +371,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 " ALE
 let g:ale_fix_on_save = 1
-let g:ale_fixers = {'python': ['autopep8', 'isort']}
+let g:ale_fixers = {'python': ['isort']}
 let g:ale_pattern_options = {'ipython_log.py': {'ale_enabled': 0}}
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -485,4 +489,3 @@ let g:strip_whitelines_at_eof = 1
 " vimdiff
 "" ignore whitespace differences
 set diffopt+=iwhite
-
