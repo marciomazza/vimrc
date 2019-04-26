@@ -52,6 +52,7 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'jinja', 'htmldjango'] }
 
 "" Programming in general
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
