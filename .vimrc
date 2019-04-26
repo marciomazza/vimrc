@@ -18,6 +18,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'bogado/file-line'
 Plug 'gu-fan/riv.vim'
 Plug 'terryma/vim-expand-region'
+Plug 'svermeulen/vim-cutlass'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
@@ -488,3 +489,9 @@ let g:strip_whitelines_at_eof = 1
 " vimdiff
 "" ignore whitespace differences
 set diffopt+=iwhite
+
+" svermeulen/vim-cutlass
+nnoremap m d
+xnoremap m d
+nnoremap mm dd
+nnoremap M D
