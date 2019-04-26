@@ -122,7 +122,6 @@ set ignorecase
 set smartcase
 
 "" Encoding
-set bomb
 set ttyfast
 
 "" Directories for swp files
