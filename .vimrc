@@ -1,5 +1,7 @@
 " Bootstrapped with http://vim-bootstrap.com/
 " (https://github.com/avelino/vim-bootstrap)
+if has('python3')
+endif
 
 call plug#begin('~/.vim/plugged')
 
@@ -489,11 +491,3 @@ let g:strip_whitelines_at_eof = 1
 " vimdiff
 "" ignore whitespace differences
 set diffopt+=iwhite
-
-"Black with PEP8 line length
-:let g:black_linelength = 79
-
-" TEMP workaround for https://github.com/w0rp/ale/issues/1470
-" TODO remove this and change vim setup to compile from source or get a version from 8.1 on
-" see https://github.com/w0rp/ale/issues/1470#issuecomment-414861305
-let g:ale_echo_cursor = 0
