@@ -20,6 +20,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'bogado/file-line'
 Plug 'gu-fan/riv.vim'
 Plug 'terryma/vim-expand-region'
+Plug 'rickhowe/diffchar.vim'
+Plug 'gaving/vim-textobj-argument'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
