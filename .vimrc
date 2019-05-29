@@ -22,6 +22,7 @@ Plug 'gu-fan/riv.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'rickhowe/diffchar.vim'
 Plug 'gaving/vim-textobj-argument'
+Plug 'vim-scripts/gitignore'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
