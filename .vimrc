@@ -495,4 +495,4 @@ let g:strip_whitelines_at_eof = 1
 "" ignore whitespace differences
 set diffopt+=iwhite
 
-let g:black_linelength = 79
+let g:black_linelength = 88
