@@ -29,7 +29,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" Color
-Plug 'marciomazza/vim-brogrammer-theme'
+Plug 'morhetz/gruvbox'
 
 "" for Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
@@ -156,9 +156,10 @@ set number
 set relativenumber
 
 let no_buffers_menu=1
-set t_Co=256
-" silent for the case when the plugin has not yet been installed
-silent! colorscheme brogrammer
+" set t_Co=256
+set background=dark
+let g:gruvbox_contrast_dark = 'medium'
+colorscheme gruvbox
 
 set mousemodel=popup
 set nocursorline
