@@ -32,7 +32,7 @@ Plug 'honza/vim-snippets'
 Plug 'marciomazza/vim-brogrammer-theme'
 
 "" for Python
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'alfredodeza/pytest.vim', { 'for': 'python' }
 Plug 'mindriot101/vim-yapf', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
@@ -63,6 +63,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'ervandew/supertab'
 Plug 'majutsushi/tagbar', {'on': []}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" TODO .... install https://www.npmjs.com/package/coc-python
 
 call plug#end()
 
@@ -195,11 +197,13 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
+" set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
+" if exists("*fugitive#statusline")
+"   set statusline+=%{fugitive#statusline()}
+" endif
+
+set statusline^=%{coc#status()}
 
 " vim-airline
 let g:airline_theme = 'powerlineish'
