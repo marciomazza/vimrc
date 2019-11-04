@@ -23,6 +23,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'rickhowe/diffchar.vim'
 Plug 'gaving/vim-textobj-argument'
 Plug 'vim-scripts/gitignore'
+Plug 'tommcdo/vim-exchange'
 
 "" Snippets
 Plug 'SirVer/ultisnips'
