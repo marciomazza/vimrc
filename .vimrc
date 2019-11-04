@@ -41,7 +41,7 @@ Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'ambv/black'
 
 "" for Python and Javascript
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 "" Javascript
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
