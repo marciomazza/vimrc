@@ -495,5 +495,3 @@ let g:strip_whitelines_at_eof = 1
 " vimdiff
 "" ignore whitespace differences
 set diffopt+=iwhite
-
-let g:black_linelength = 79
