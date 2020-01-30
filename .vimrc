@@ -13,7 +13,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
-Plug 'sheerun/vim-polyglot'
 Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'ntpeters/vim-better-whitespace'
@@ -56,6 +55,9 @@ Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'jinja', 'htmldjango', 'css
 Plug 'tpope/vim-haml', { 'for': ['haml', 'sass', 'scss'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'jinja', 'htmldjango'] }
 
+"" golang
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 "" Programming in general
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -64,6 +66,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'ervandew/supertab'
 Plug 'majutsushi/tagbar', {'on': []}
+""" vim-polyglot conflicts with vim-go and should appear after it
+""" see https://github.com/fatih/vim-go/issues/2262
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -495,3 +500,6 @@ let g:strip_whitelines_at_eof = 1
 " vimdiff
 "" ignore whitespace differences
 set diffopt+=iwhite
+
+
+let g:go_debug=['shell-commands']
