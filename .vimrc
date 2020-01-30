@@ -459,6 +459,10 @@ let g:python_highlight_all = 1
 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabClosePreviewOnPopupClose = 1
+"" open preview window on the bottom
+set splitbelow
+set splitright
 
 " ntpeters/vim-better-whitespace
 let g:strip_whitespace_on_save = 1
