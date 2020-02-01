@@ -17,7 +17,6 @@ Plug 'vim-scripts/grep.vim'
 Plug 'vim-scripts/CSApprox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bogado/file-line'
-Plug 'gu-fan/riv.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'rickhowe/diffchar.vim'
 Plug 'gaving/vim-textobj-argument'
@@ -33,11 +32,9 @@ Plug 'marciomazza/vim-brogrammer-theme'
 
 "" for Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'alfredodeza/pytest.vim', { 'for': 'python' }
-Plug 'mindriot101/vim-yapf', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
 Plug 'hdima/python-syntax', { 'for': 'python' }
-Plug 'psf/black'
+Plug 'psf/black', { 'for': 'python' }
 
 "" for Python and Javascript
 Plug 'dense-analysis/ale'
@@ -52,7 +49,6 @@ Plug 'posva/vim-vue'
 Plug 'vim-scripts/HTML-AutoCloseTag', { 'for': ['html', 'jinja', 'htmldjango'] }
 Plug 'hail2u/vim-css3-syntax', { 'for': ['html', 'jinja', 'htmldjango'] }
 Plug 'gorodinskiy/vim-coloresque', { 'for': ['html', 'jinja', 'htmldjango', 'css', 'less', 'sass', 'scss'] }
-Plug 'tpope/vim-haml', { 'for': ['haml', 'sass', 'scss'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'jinja', 'htmldjango'] }
 
 "" golang
@@ -467,32 +463,8 @@ set splitright
 " ntpeters/vim-better-whitespace
 let g:strip_whitespace_on_save = 1
 
-" vim-yapf
-:nnoremap <leader>y :Yapf<cr>
-:nnoremap <leader>k :Isort<cr>
-
-" pytest.vim
-"  TODO get back to this plugin and check if it can be useful
-" Execute the tests
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tt <Esc>:Pytest project<CR>
-" cycle through test errors
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
-
 " rainbow
 let g:rainbow_active = 1
-
-" vim-autopep8
-let g:autopep8_disable_show_diff = 1
-
-" riv.vim
-let g:riv_disable_folding = 1
-let g:riv_auto_rst2html = 1
-let g:riv_temp_path = '/tmp'
 
 " vim-better-whitespace
 let g:strip_whitespace_confirm = 0
