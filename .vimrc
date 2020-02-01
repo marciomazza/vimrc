@@ -37,7 +37,7 @@ Plug 'alfredodeza/pytest.vim', { 'for': 'python' }
 Plug 'mindriot101/vim-yapf', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
 Plug 'hdima/python-syntax', { 'for': 'python' }
-Plug 'ambv/black'
+Plug 'psf/black'
 
 "" for Python and Javascript
 Plug 'dense-analysis/ale'
