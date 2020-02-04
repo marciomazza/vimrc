@@ -370,6 +370,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
 " ALE
+" match black expectaions
+" see https://github.com/microsoft/vscode-python/issues/6933#issuecomment-543059396
+" TODO observe if this is really working... perhaps have a test?
+let g:ale_python_isort_options = '--multi-line=1 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=88'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {'python': ['isort']}
 let g:ale_pattern_options = {'ipython_log.py': {'ale_enabled': 0}}
