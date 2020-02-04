@@ -196,10 +196,13 @@ if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 
+
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -376,7 +379,11 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ale_python_isort_options = '--multi-line=1 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=88'
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {'python': ['isort']}
+let b:ale_linters = {'python': ['mypy']}
 let g:ale_pattern_options = {'ipython_log.py': {'ale_enabled': 0}}
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
@@ -444,9 +451,7 @@ let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#popup_on_dot = 1
 
-" vim-airline
-let g:airline#extensions#virtualenv#enabled = 1
-
+" vim-javascript
 let g:javascript_enable_domhtmlcss = 1
 
 " hdima/python-syntax
