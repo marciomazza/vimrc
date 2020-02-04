@@ -1,8 +1,3 @@
-" Bootstrapped with http://vim-bootstrap.com/
-" (https://github.com/avelino/vim-bootstrap)
-if has('python3')
-endif
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -35,6 +30,7 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'fisadev/vim-isort', { 'for': 'python' }
 Plug 'hdima/python-syntax', { 'for': 'python' }
 Plug 'psf/black', { 'for': 'python' }
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 "" for Python and Javascript
 Plug 'dense-analysis/ale'
