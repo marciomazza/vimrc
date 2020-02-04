@@ -461,6 +461,8 @@ let g:python_highlight_all = 1
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabClosePreviewOnPopupClose = 1
+""" force to work with jedi (https://vi.stackexchange.com/a/5450)
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 "" open preview window on the bottom
 set splitbelow
 set splitright
